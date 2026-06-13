@@ -1,0 +1,89 @@
+{
+    "programming": [
+        "Kotlin",
+        "Python",
+        "Java",
+        "TypeScript",
+        "JavaScript",
+        "SQL",
+        "Bash",
+        "C"
+    ],
+    "framework": [
+        "FastAPI",
+        "Spring",
+        "Micronaut",
+        "Fastify",
+        "Node.js",
+        "Svelte",
+        "Kotlin Multiplatform",
+        "Express",
+        "React",
+        "Django"
+    ],
+    "database": [
+        "PostgreSQL",
+        "MySQL",
+        "SQL Server",
+        "DynamoDB",
+        "SQLite",
+        "Neo4j",
+        "Cosmos DB"
+    ],
+    "clouds": [
+        {
+            "name": "AWS",
+            "resources": [
+                "Lambda",
+                "Fargate",
+                "SQS",
+                "DynamoDB",
+                "CloudFront",
+                "S3",
+                "ElastiCache",
+                "Aurora/RDS",
+                "CloudWatch",
+                "ECS",
+                "Batch",
+                "EC2",
+                "Secrets Manager",
+                "Parameter Store",
+                "KMS",
+                "API Gateway",
+                "ECR"
+            ]
+        },
+        {
+            "name": "Azure",
+            "resources": [
+                "App Service",
+                "Cosmos DB",
+                "Container Apps",
+                "Blob Storage",
+                "Table Storage",
+                "SQL Server",
+                "ACR",
+                "CDN"
+            ]
+        }
+    ],
+    "iac": [
+        "Terraform",
+        "Terragrunt",
+        "CloudFormation"
+    ],
+    "cicd": [
+        "GitLab CI",
+        "GitHub Actions"
+    ],
+    "observability": [
+        "Grafana",
+        "Prometheus",
+        "OpenTelemetry"
+    ],
+    "other": [
+        "Docker",
+        "Kafka",
+        "Apache Flink"
+    ]
+}

@@ -1,0 +1,148 @@
+{
+    "erfaring": [
+        {
+            "company": "DNB",
+            "department": "T&S B&P PCS Engineering",
+            "role": "Software Engineer",
+            "from": "august 2025",
+            "to": "dd",
+            "current": true,
+            "comments": [
+                "Jobber med infrastruktur i AWS, samt DevOps og utvikling. Teamet driver med leveringer av ulike CAMT-rapporter."
+            ],
+            "remarks": [
+                "DevOps",
+                "Infrastructure",
+                "AWS"
+            ]
+        },
+        {
+            "company": "DNB",
+            "department": "T&S GT Greenhouse",
+            "role": "IT architect graduate",
+            "accomplishments": [
+                "Fullførte DNB sitt 3-årige graduateprogram i IT og arkitektur",
+                "Tok årsenhet i IT-arkitektur",
+                "Gjorde chatbotene til DNB GDPR-vennlige, samt sparte kostnader",
+                "Optimaliserte meldingsflyt og ressurser for bedriftskunder"
+            ],
+            "from": "august 2022",
+            "to": "august 2025",
+            "current": false,
+            "comments": [
+                "3. året: Payments: Jobbet som solution architect, og var med på deres modernisering til sky, og designet og kodet løsninger som skulle flyttes til sky.",
+                "2. året: Corporate banking (backend): Jobbet 3 måneder med DNB sin nye likviditetsløsning, og 9 måneder med mobilbanken for bedrifter. I CB jobbet jeg som en solution architect og utvikler.",
+                "1. året: Emerging Technologies. Jobbet der med chatbotene til DNB som en software engineer. En av oppgavene var å gjøre chatbotene mer GDPR-vennlige."
+            ],
+            "remarks": [
+                "Software engineer",
+                "Solution architect",
+                "DevOps",
+                "corporate banking",
+                "payments",
+                "AWS",
+                "Azure",
+                "UiO",
+                "Graduate",
+                "Liquidity",
+                "Mobile corporate app",
+                "Chatbots"
+            ]
+        },
+        {
+            "company": "UiO",
+            "department": "Institutt for informatikk",
+            "role": "Gruppelærer i IN1000",
+            "from": "august 2021",
+            "to": "desember 2021",
+            "current": false,
+            "comments": [
+                "Jobben bestod av å holde gruppetimer der ukens pensum ble gjennomgått, og rette de obligatoriske oppgavene i kurset"
+            ],
+            "remarks": [
+                "programmering",
+                "python",
+                "objektorientert programmering",
+                "gruppelærer",
+                "retting av innleveringer"
+            ]
+        },
+        {
+            "company": "UiO",
+            "department": "Institutt for informatikk",
+            "role": "Orakel i forkurs i informatikk",
+            "from": "august 2021",
+            "to": "august 2021",
+            "current": false,
+            "comments": [
+                "Jobben bestod av å hjelpe nye studenter med oppsett av PC/Mac, og gi introduksjon til linux, samt terminal"
+            ],
+            "remarks": [
+                "programmering",
+                "python",
+                "linux",
+                "unix"
+            ]
+        },
+        {
+            "company": "Famme",
+            "department": "",
+            "role": "Utvikler, internship",
+            "from": "juni 2021",
+            "to": "august 2021",
+            "current": false,
+            "remarks": [
+                "Sommerjobb",
+                "ecommerce",
+                "python",
+                "database",
+                "web scraping"
+            ]
+        },
+        {
+            "company": "UiO",
+            "department": "Institutt for informatikk",
+            "role": "Gruppelærer i IN1000",
+            "from": "januar 2021",
+            "to": "juli 2021",
+            "current": false,
+            "comments": [
+                "Jobben bestod av å holde gruppetimer der ukens pensum ble gjennomgått, og rette de obligatoriske oppgavene i kurset"
+            ],
+            "remarks": [
+                "programmering",
+                "python",
+                "objektorientert programmering",
+                "gruppelærer",
+                "retting av innleveringer"
+            ]
+        },
+        {
+            "company": "UiO",
+            "department": "Institutt for informatikk",
+            "role": "Gruppelærer i IN1000",
+            "from": "august 2020",
+            "to": "desember 2020",
+            "current": false,
+            "comments": [
+                "Jobben bestod av å holde gruppetimer der ukens pensum ble gjennomgått, og rette de obligatoriske oppgavene i kurset"
+            ],
+            "remarks": [
+                "programmering",
+                "python",
+                "objektorientert programmering",
+                "gruppelærer",
+                "retting av innleveringer"
+            ]
+        },
+        {
+            "company": "Oppegård kommune",
+            "department": "Ressursbanken",
+            "role": "Tilkallingsvikar",
+            "from": "mai 2017",
+            "to": "desember 2017",
+            "current": false,
+            "remarks": []
+        }
+    ]
+}

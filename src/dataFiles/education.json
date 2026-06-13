@@ -1,0 +1,83 @@
+{
+    "dnb": {
+        "school": "Universitetet i Oslo",
+        "name": "Årsstudium i IT-arkitektur",
+        "type": "Årsenhet",
+        "from": "2022",
+        "to": "2025",
+        "subjects": [
+            "utvikling/drift av komplekse systemer",
+            "DevOps",
+            "arkitektur",
+            "ledelse",
+            "innovasjon",
+            "digital innovasjon"
+        ]
+    },
+    "master": {
+        "school": "Universitetet i Oslo",
+        "name": "Informatikk: programmering og systemarkitektur",
+        "type": "Master",
+        "from": "2020",
+        "to": "2022",
+        "subjects": [
+            "ethical hacking",
+            "NLP",
+            "data stream",
+            "complex event processing",
+            "IoT",
+            "security by design",
+            "smidig arbeid, og prosess-/team-forbedringer"
+        ],
+        "thesis": {
+            "name": "The Cesar Framework",
+            "subTitle": "A framework for storing and analyzing OSA data from smartwatches",
+            "topics": [
+                "event emitting",
+                "server",
+                "apnea detection",
+                "data visualization",
+                "data analytics",
+                "machine learning",
+                "arkitektur"
+            ]
+        }
+    },
+    "pt": {
+        "school": "Akademiet For Personlig Trening",
+        "name": "Personlig trener",
+        "type": "1/2 årsenhet",
+        "from": "2018",
+        "to": "2019",
+        "subjects": [
+            "anatomi",
+            "treningslære",
+            "ernæring",
+            "mental trening",
+            "PT",
+            "styrketrening",
+            "utholdenhetstrening"
+        ]
+    },
+    "bachelor": {
+        "school": "Universitetet i Oslo",
+        "name": "Informatikk: programmering og systemarkitektur",
+        "type": "Bachelor",
+        "from": "2017",
+        "to": "2020",
+        "subjects": [
+            "database",
+            "sikkerhet",
+            "programmering",
+            "objektorientert programmering",
+            "algoritmer",
+            "datastrukturer",
+            "smidig utvikling",
+            "teamarbeid",
+            "apputvikling",
+            "scripting",
+            "logiske metoder",
+            "parallell databehandling"
+        ]
+    }
+}
