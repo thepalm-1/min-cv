@@ -3,5 +3,5 @@ export interface School {
     type: string;
     from: string;
     to: string;
-    fordypning: string;
+    fordypning?: string;
 }

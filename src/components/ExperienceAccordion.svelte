@@ -13,6 +13,8 @@
     $: contentId = `experience-${experience.company}-${experience.role}-${experience.from}`
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-");
+    const formatPeriod = (from: string, to: string, current: boolean) =>
+        current ? `${from} – ${to}` : !to || from === to ? from : `${from} – ${to}`;
 </script>
 
 <article class="experience" class:featured>
@@ -34,24 +36,32 @@
                 </small>
             </span>
             <span class="period">
-                {experience.from} – {experience.current ? $t.present : experience.to}
+                {formatPeriod(
+                    experience.from,
+                    experience.current ? $t.present : experience.to,
+                    experience.current,
+                )}
             </span>
             <span class="indicator" aria-hidden="true">{isOpen ? "▾" : "▸"}</span>
         </button>
     {:else}
-        <div class="summary plain">
-            <span>
-                <strong>{experience.role}</strong>
-                <small>
-                    {experience.company}{experience.department
-                        ? ` · ${experience.department}`
-                        : ""}
-                </small>
-            </span>
-            <span class="period">
-                {experience.from} – {experience.current ? $t.present : experience.to}
-            </span>
-        </div>
+            <div class="summary plain">
+                <span>
+                    <strong>{experience.role}</strong>
+                    <small>
+                        {experience.company}{experience.department
+                            ? ` · ${experience.department}`
+                            : ""}
+                    </small>
+                </span>
+                <span class="period">
+                    {formatPeriod(
+                        experience.from,
+                        experience.current ? $t.present : experience.to,
+                        experience.current,
+                    )}
+                </span>
+            </div>
     {/if}
 
     {#if isOpen && hasDetails}

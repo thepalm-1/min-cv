@@ -3,7 +3,6 @@
 
     export let name: string;
     export let email: string;
-    export let github: string;
     export let phone: string;
     export let linkedin: string = "";
 </script>
@@ -11,11 +10,6 @@
 <address class="contact" aria-label="{$t.contactFor} {name}">
     <a href={`mailto:${email}`}>{email}</a>
     <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>
-    <a
-        href={`https://${github.replace(/^https?:\/\//, "")}`}
-        target="_blank"
-        rel="noopener noreferrer">GitHub</a
-    >
     {#if linkedin}
         <a
             href={`https://${linkedin.replace(/^https?:\/\//, "")}`}

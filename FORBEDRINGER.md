@@ -13,7 +13,7 @@ utilgjengelig innhold.
 | Kritisk | Mobil | Rett horisontal overflow i toppseksjonen, profilbildet og fanene. Test ved minst 360 px og 390 px bredde. | Den publiserte mobilvisningen kutter bilde og innhold. |
 | Hoy | Forsteinntrykk | Lag en hero-seksjon med navn, `Software Engineer`, navarende arbeidsgiver, kort faglig profil og synlig PDF-knapp. | Rekrutterer ma forsta rolle og relevans umiddelbart pa desktop. |
 | Hoy | Informasjonshierarki | Vis `Erfaring` som standardseksjon, med DNB-rollene forst. Flytt utdanning etter erfaring og ferdigheter. | Yrkeserfaring er sterkeste signal for aktuelle utviklerroller. |
-| Hoy | Kontakt | Vis e-post, LinkedIn og GitHub direkte i toppen uten at kontaktkortet ma apnes. | Reduserer friksjon nar en rekrutterer vil kontakte eller verifisere kandidaten. |
+| Hoy | Kontakt | Vis e-post og LinkedIn direkte i toppen uten at kontaktkortet ma apnes. | Reduserer friksjon nar en rekrutterer vil kontakte eller verifisere kandidaten. |
 | Hoy | Innhold | Prioriter hoyere utdanning i nettsidevisningen. PDF-innhold og PDF-layout beholdes utover korrektur og sprakvalg. | Nettsiden kan presentere mest relevant innhold forst uten a endre PDF-dokumentets struktur. |
 | Hoy | Sprakkvalitet | Korrekturles alle tekster og teknologinavn. | Skrivefeil svekker profesjonalitet og detaljtillit. |
 | Middels | UI-design | Bytt sterke rod/bla knapper og tunge gra accordions med roligere farger, mer luft og tydelige seksjonskort. | Det gir et mer profesjonelt desktop-uttrykk. |
@@ -72,7 +72,7 @@ Eksempler observert i publisert innhold:
 | `Paramter Store` | `Parameter Store` |
 | `Promethious` | `Prometheus` |
 | `Cloud formation` | `CloudFormation` |
-| `Github actions` / `Gitlab ci` | `GitHub Actions` / `GitLab CI` |
+| `CI-verktoy` | `Automatiserte bygge- og distribusjonsverktoy` |
 
 ## PDF-avgrensning
 

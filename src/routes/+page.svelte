@@ -1,10 +1,11 @@
 <script lang="ts">
     import ContactCard from "../components/ContactCard.svelte";
     import ContentSwitch from "../components/ContentSwitch.svelte";
-    import education from "../dataFiles/education.json";
-    import contact from "../dataFiles/contactInfo.json";
-    import language from "../dataFiles/language.json";
-    import techStack from "../dataFiles/techStack.json";
+import education from "../dataFiles/education.json";
+import contact from "../dataFiles/contactInfo.json";
+import language from "../dataFiles/language.json";
+import publications from "../dataFiles/publications.json";
+import techStack from "../dataFiles/techstack.json";
     import { t } from "../stores/i18n";
     import { base } from "$app/paths";
 
@@ -12,55 +13,58 @@
         "@context": "https://schema.org",
         "@type": "Person",
         name: contact.name,
-        jobTitle: "Overingeniør",
+        jobTitle: "Overingeniør i ammunisjonsteknologi",
+        worksFor: {
+            "@type": "Organization",
+            name: "Forsvarsmateriell (FMA)",
+        },
         knowsLanguage: language.map((item) => ({
             "@type": "Language",
             name: item.name,
-            alternateName: item.level
+            alternateName: item.level,
         })),
         knowsAbout: [
             ...techStack.programming,
-            ...techStack.framework,
-            ...techStack.database,
-            ...techStack.iac,
-            ...techStack.cicd,
-            ...techStack.observability,
-            ...techStack.other
+            ...techStack.analysisMethods,
+            ...techStack.systems,
+            ...techStack.courses.map((course) => course.name),
+            ...publications.map((publication) => publication.title),
+            ...techStack.other,
         ],
         educationalCredentialAwarded: [
-            education.dnb.name,
             education.master.name,
             education.bachelor.name,
-            education.pt.name
         ],
-        sameAs: [contact.github, contact.linkedin],
+        sameAs: [contact.linkedin],
         email: `mailto:${contact.email}`,
-        telephone: contact.phone
+        telephone: contact.phone,
     };
 </script>
 
 <svelte:head>
-    <title>Hans Olav Hovtun Palm | Overingeniør</title>
+    <title>
+        {contact.name} | Overingeniør i ammunisjonsteknologi
+    </title>
     <meta name="description" content={$t.profileDescription} />
     <meta
         name="ai:summary"
-        content="Lars Christian Hovtun Palm er en software engineer og overingeniør med erfaring fra AWS, DevOps, skyinfrastruktur, backendutvikling og løsningsarkitektur."
+        content="Hans Olav Hovtun Palm har erfaring med anskaffelse og forvaltning av ammunisjon, mastergrad i organisk kjemi fra NMBU, erfaring fra FMA og FFI, organisk analytisk kjemi og grunnleggende programmering."
     />
     <meta
         name="ai:skills"
-        content="Kotlin, Python, Java, TypeScript, JavaScript, SQL, Bash, AWS, Azure, Terraform, Terragrunt, CloudFormation, Docker, Kafka, OpenTelemetry."
+        content="Python, MatLab, RStudio, GC-MS, organisk analytisk kjemi, SAP, ERP-system, anskaffelser og forvaltning av ammunisjon."
     />
     <meta
         name="ai:education"
-        content="Universitetet i Oslo: årsstudium i IT-arkitektur, master i informatikk og bachelor i informatikk. Akademiet For Personlig Trening: personlig trener."
+        content="Norwegian University of Life Sciences (NMBU): master i organisk kjemi og bachelor i kjemi. Roald Amundsen videregående skole: studiespesialisering med realfag."
     />
     <meta
         name="ai:languages"
-        content="Norsk morsmål, engelsk god muntlig og skriftlig, tysk videregående skole-nivå."
+        content="Norsk morsmål, engelsk flytende muntlig og skriftlig."
     />
     <meta
         name="ai:experience"
-        content="DNB software engineer fra august 2025, tidligere IT architect graduate i DNB, gruppeunderviser og orakel ved UiO, internship hos Famme."
+        content="Overingeniør i Forsvarsmateriell fra oktober 2023, sommerstudent ved Forsvarets forskningsinstitutt, og tilkallingsvikar i barnehage og grunnskole i Oppegård kommune."
     />
     <script type="application/ld+json">
         {JSON.stringify(aiMetadata)}
@@ -70,7 +74,7 @@
 <main class="profile">
     <section class="document-header" aria-label={$t.profileSection}>
         <div class="header-copy">
-            <p class="eyebrow">Overingeniør</p>
+            <p class="eyebrow">Overingeniør i ammunisjonsteknologi</p>
             <h1>{contact.name}</h1>
             <p class="summary">{$t.profileDescription}</p>
 
@@ -89,7 +93,6 @@
                     <ContactCard
                         name={contact.name}
                         email={contact.email}
-                        github={contact.github}
                         phone={contact.phone}
                         linkedin={contact.linkedin}
                     />
@@ -100,15 +103,11 @@
                     <dl class="facts">
                         <div>
                             <dt>Rolle</dt>
-                            <dd>Software Engineer · DNB</dd>
+                            <dd>Overingeniør · Forsvarsmateriell (FMA)</dd>
                         </div>
                         <div>
                             <dt>Arbeidsfelt</dt>
-                            <dd>Sky, DevOps og arkitektur</dd>
-                        </div>
-                        <div>
-                            <dt>Base</dt>
-                            <dd>Oslo</dd>
+                            <dd>Ammunisjon, kjemi og laboratoriearbeid</dd>
                         </div>
                     </dl>
                 </div>
@@ -120,7 +119,7 @@
                 <img
                     class="portrait"
                     src="{base}/profilebilde.png"
-                    alt="Lars Christian Hovtun Palm"
+                    alt={contact.name}
                 />
             </div>
         </div>
@@ -190,7 +189,9 @@
     }
 
     .portrait-wrap {
+        max-width: 260px;
         padding: 0.75rem;
+        justify-self: end;
     }
 
     .portrait {

@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { TechSkills } from "../types/techSkills";
-    import skillsJson from "../dataFiles/techStack.json";
+    import skillsJson from "../dataFiles/techstack.json";
     import SkillAccordion from "./SkillAccordion.svelte";
     import { t } from "../stores/i18n";
 
@@ -12,12 +12,8 @@
     <p class="intro">{$t.skillsIntro}</p>
     <div class="skills-container">
         <SkillAccordion title={$t.programming} list={skills.programming} />
-        <SkillAccordion title={$t.clouds} list={skills.clouds} />
-        <SkillAccordion title={$t.frameworks} list={skills.framework} />
-        <SkillAccordion title={$t.databases} list={skills.database} />
-        <SkillAccordion title={$t.infrastructureAsCode} list={skills.iac} />
-        <SkillAccordion title="CI/CD" list={skills.cicd} />
-        <SkillAccordion title={$t.observability} list={skills.observability} />
+        <SkillAccordion title="Analysemetoder" list={skills.analysisMethods} />
+        <SkillAccordion title="Systemer" list={skills.systems} />
         <SkillAccordion title={$t.other} list={skills.other} />
     </div>
 </section>

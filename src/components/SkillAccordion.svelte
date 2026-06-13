@@ -1,20 +1,25 @@
 <script lang="ts">
-    import type { Cloud } from "../types/cloud";
+    import type { Course } from "../types/techSkills";
 
     export let title: string;
-    export let list: string[] | Cloud[] = [];
+    export let list: Array<string | Course> = [];
 
-    const isCloud = (item: string | Cloud): item is Cloud =>
-        typeof item === "object" && "resources" in item;
+    const isCourse = (item: string | Course): item is Course =>
+        typeof item === "object";
 </script>
 
 <article class="skill">
     <h3>{title}</h3>
     <ul>
-        {#each list as item (typeof item === "string" ? item : item.name)}
-            {#if isCloud(item)}
-                <li>
-                    <strong>{item.name}:</strong> {item.resources.join(", ")}
+        {#each list as item (item)}
+            {#if isCourse(item)}
+                <li class="course-item">
+                    <strong>{item.name}</strong>
+                    <span>{item.institution}</span>
+                    <small>{item.date}</small>
+                    {#if item.description}
+                        <p>{item.description}</p>
+                    {/if}
                 </li>
             {:else}
                 <li>{item}</li>
@@ -48,5 +53,30 @@
 
     li + li {
         margin-top: 0.28rem;
+    }
+
+    .course-item {
+        display: grid;
+        gap: 0.15rem;
+    }
+
+    .course-item strong {
+        color: var(--text-color);
+        display: block;
+        font-size: 0.96rem;
+        margin: 0;
+    }
+
+    .course-item span,
+    .course-item small,
+    .course-item p {
+        color: var(--text-muted);
+        font-size: 0.92rem;
+        margin: 0;
+    }
+
+    .course-item p {
+        line-height: 1.5;
+        margin-top: 0.15rem;
     }
 </style>
