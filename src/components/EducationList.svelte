@@ -5,16 +5,16 @@
     import { t } from "../stores/i18n";
 
     const utdanning = utdanningNo as EducationData;
+    $: educationEntries = Object.values(utdanning);
 </script>
 
 <section class="education" aria-labelledby="education-heading">
     <h2 id="education-heading">{$t.education}</h2>
     <p>{$t.educationIntro}</p>
     <div class="entries">
-        <EducationAccordion education={utdanning.dnb} />
-        <EducationAccordion education={utdanning.master} />
-        <EducationAccordion education={utdanning.pt} />
-        <EducationAccordion education={utdanning.bachelor} />
+        {#each educationEntries as education}
+            <EducationAccordion education={education} />
+        {/each}
     </div>
 </section>
 

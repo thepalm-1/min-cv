@@ -65,9 +65,10 @@
     <section>
       <h3>Kort forklart</h3>
       <p>
-        Denne CV-siden viser offentlig yrkesinformasjon om Hans Palm. Du fyller
-        ikke inn eller laster opp personopplysninger på siden, og Palmtech
-        mottar ikke opplysninger om deg gjennom CV-funksjonaliteten.
+        Denne CV-siden viser offentlig yrkesinformasjon om Hans Olav Hovtun
+        Palm. Du fyller ikke inn eller laster opp personopplysninger på siden,
+        og Palmtech mottar ikke opplysninger om deg gjennom
+        CV-funksjonaliteten.
       </p>
     </section>
 
@@ -75,10 +76,7 @@
       <h3>Hvem er ansvarlig?</h3>
       <p>
         Palmtech er ansvarlig for nettstedet. Spørsmål om personvern kan meldes
-        via
-        <a href="https://github.com/larsPalm/min-cv"
-          >prosjektets offentlige GitHub-side</a
-        >.
+        via kontaktinformasjonen i CV-en.
       </p>
     </section>
 
@@ -103,8 +101,8 @@
           fra det samme publiserte CV-innholdet.
         </li>
         <li>
-          Lenker til for eksempel GitHub og LinkedIn tar deg videre til eksterne
-          tjenester med egne personvernregler.
+          Lenker til eksterne tjenester tar deg videre til egne
+          personvernregler.
         </li>
       </ul>
     </section>
@@ -115,20 +113,6 @@
         Nettstedet bruker ikke cookies eller analyseverktøy. Siden vises alltid
         på norsk og i mørk modus, uten at slike valg lagres i nettleserens
         lokale lagring.
-      </p>
-    </section>
-
-    <section>
-      <h3>Publisering av nettstedet</h3>
-      <p>
-        Nettstedet publiseres som en statisk side gjennom GitHub Pages. GitHub
-        kan behandle tekniske opplysninger om besøk til nettstedet, for eksempel
-        IP-adresse og forespørselslogger, i samsvar med
-        <a
-          href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
-        >
-          GitHubs personvernerklæring</a
-        >.
       </p>
     </section>
 

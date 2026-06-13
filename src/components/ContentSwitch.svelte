@@ -3,15 +3,28 @@
     import EducationDisplay from "./EducationDisplay.svelte";
     import Competance from "./Competance.svelte";
     import TechPreferance from "./TechPreferance.svelte";
+    import CoursesDisplay from "./CoursesDisplay.svelte";
+    import PublicationsDisplay from "./PublicationsDisplay.svelte";
+    import SchoolsDisplay from "./SchoolsDisplay.svelte";
     import { t } from "../stores/i18n";
 
-    type Section = "experience" | "skills" | "education" | "additional";
+    type Section =
+        | "experience"
+        | "publications"
+        | "education"
+        | "schools"
+        | "skills"
+        | "courses"
+        | "additional";
 
     let activeTab: Section = "experience";
     $: tabs = [
         { id: "experience" as Section, label: $t.experience },
+        { id: "publications" as Section, label: $t.publications },
         { id: "education" as Section, label: $t.education },
+        { id: "schools" as Section, label: $t.school },
         { id: "skills" as Section, label: $t.pdfSkills },
+        { id: "courses" as Section, label: $t.courses },
         { id: "additional" as Section, label: $t.additional },
     ];
 </script>
@@ -35,8 +48,14 @@
         <ExperienceList />
     {:else if activeTab === "education"}
         <EducationDisplay />
+    {:else if activeTab === "schools"}
+        <SchoolsDisplay />
     {:else if activeTab === "skills"}
         <TechPreferance />
+    {:else if activeTab === "courses"}
+        <CoursesDisplay />
+    {:else if activeTab === "publications"}
+        <PublicationsDisplay />
     {:else}
         <Competance />
     {/if}

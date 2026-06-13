@@ -1,11 +1,16 @@
 <script lang="ts">
-    import type { Content, TDocumentDefinitions } from "pdfmake/interfaces";
-    import type { Experience } from "../types/experience";
-    import type { Education } from "../types/education";
-    import type { School } from "../types/school";
-    import languagesNo from "../dataFiles/language.json";
-    import competenciesNo from "../dataFiles/kompetanse.json";
-    import techStack from "../dataFiles/techStack.json";
+import type { Content, TDocumentDefinitions } from "pdfmake/interfaces";
+import type { Experience } from "../types/experience";
+import type { Education } from "../types/education";
+import type { School } from "../types/school";
+import type { Course } from "../types/techSkills";
+import type { Publication } from "../types/publication";
+import type { Reference } from "../types/reference";
+import languagesNo from "../dataFiles/language.json";
+import competenciesNo from "../dataFiles/kompetanse.json";
+import publicationsNo from "../dataFiles/publications.json";
+import referencesNo from "../dataFiles/references.json";
+import techStack from "../dataFiles/techstack.json";
     import schoolsNo from "../dataFiles/schools.json";
     import educationNo from "../dataFiles/education.json";
     import experienceNo from "../dataFiles/experience.json";
@@ -17,6 +22,28 @@
 
     const compact = (items: Array<Content | undefined>): Content[] =>
         items.filter((item): item is Content => item !== undefined);
+
+    const formatPeriod = (from: string, to: string, current: boolean) =>
+        current
+            ? `${from} – ${to}`
+            : !to || from === to
+              ? from
+              : `${from} – ${to}`;
+
+    const formatCourse = (course: Course) =>
+        `${course.name} — ${course.institution} (${course.date})${
+            course.description ? `: ${course.description}` : ""
+        }`;
+
+    const formatPublication = (publication: Publication) =>
+        `${String(publication.title)}. ${String(publication.authors)}. ${String(publication.journal)} ${String(publication.year)}${
+            publication.volume ? `, ${String(publication.volume)}` : ""
+        }${publication.issue ? `(${String(publication.issue)})` : ""}${
+            publication.pages ? `, ${String(publication.pages)}` : ""
+        }${publication.doi ? `; https://doi.org/${String(publication.doi)}` : ""}`;
+
+    const formatReference = (reference: Reference) =>
+        `${reference.name}, ${reference.title}, ${reference.institution}, ${reference.phone}`;
 
     const resolveVirtualFileSystem = (
         fonts: unknown,
@@ -43,13 +70,17 @@
             const schools = schoolsNo;
             const languages = languagesNo;
             const competencies = competenciesNo;
+            const publications = publicationsNo as Publication[];
+            const references = referencesNo as Reference[];
+            const courses = techStack.courses as Course[];
 
             const docDefinition: TDocumentDefinitions = {
                 info: {
-                    title: "CV – Hans Palm",
+                    title: "CV – Hans Olav Hovtun Palm",
                     author: personalJson.name,
                     subject: "Curriculum Vitae",
-                    keywords: "TBA",
+                    keywords:
+                        "Hans Olav Hovtun Palm, CV, organisk kjemi, FMA, FFI",
                     creator: "min-cv",
                     producer: "pdfmake",
                     creationDate: new Date(),
@@ -58,8 +89,8 @@
                 content: [
                     { text: personalJson.name, style: "header" },
                     {
-                        text: `${personalJson.email} | ${personalJson.phone}
-GitHub: ${personalJson.github}
+                    text: `
+${personalJson.email} | ${personalJson.phone}
 LinkedIn: ${personalJson.linkedin}`,
                         style: "personalInfo",
                         margin: [0, 0, 0, 10],
@@ -75,7 +106,11 @@ LinkedIn: ${personalJson.linkedin}`,
                                     style: "subHeader",
                                 },
                                 {
-                                    text: `${exp.department ? `${exp.department}, ` : ""}${exp.from} – ${exp.current ? tr.present : exp.to}`,
+                                    text: `${exp.department ? `${exp.department}, ` : ""}${formatPeriod(
+                                        exp.from,
+                                        exp.current ? tr.present : exp.to,
+                                        exp.current,
+                                    )}`,
                                     margin: [0, 0, 0, 4],
                                 },
 
@@ -131,6 +166,13 @@ LinkedIn: ${personalJson.linkedin}`,
                             margin: [0, 2, 0, 6],
                         }),
                     ),
+
+                    { text: tr.pdfPublications, style: "sectionHeader" },
+
+                    {
+                        ul: publications.map(formatPublication),
+                        margin: [0, 0, 0, 10],
+                    },
 
                     { text: tr.pdfEducation, style: "sectionHeader" },
 
@@ -236,36 +278,22 @@ LinkedIn: ${personalJson.linkedin}`,
                             {
                                 width: "*",
                                 stack: [
-                                    { text: "Frameworks", bold: true },
-                                    { ul: techStack.framework },
+                                    { text: "Analysemetoder", bold: true },
+                                    { ul: techStack.analysisMethods },
                                 ],
                             },
                             {
                                 width: "*",
                                 stack: [
-                                    { text: "Database", bold: true },
-                                    { ul: techStack.database },
-                                    {
-                                        text: "CI/CD",
-                                        bold: true,
-                                        margin: [0, 6, 0, 0],
-                                    },
-                                    { ul: techStack.cicd },
+                                    { text: "Systemer", bold: true },
+                                    { ul: techStack.systems },
                                 ],
                             },
                             {
                                 width: "*",
                                 stack: [
-                                    { text: "IaC", bold: true },
-                                    { ul: techStack.iac },
                                     {
-                                        text: "Observability",
-                                        bold: true,
-                                        margin: [0, 6, 0, 0],
-                                    },
-                                    { ul: techStack.observability },
-                                    {
-                                        text: "Other",
+                                        text: "Annet",
                                         bold: true,
                                         margin: [0, 6, 0, 0],
                                     },
@@ -277,16 +305,18 @@ LinkedIn: ${personalJson.linkedin}`,
                         margin: [0, 0, 0, 10],
                     },
 
-                    { text: tr.pdfCloud, style: "sectionHeader" },
+                    {
+                        stack: [
+                            { text: tr.pdfCourses, style: "sectionHeader" },
+                            { ul: courses.map(formatCourse) },
+                        ],
+                        margin: [0, 0, 0, 10],
+                    },
+
+                    { text: tr.pdfReferences, style: "sectionHeader" },
 
                     {
-                        columns: techStack.clouds.map((cloud) => ({
-                            stack: [
-                                { text: cloud.name, bold: true },
-                                { text: cloud.resources.join(", ") },
-                            ],
-                        })),
-                        columnGap: 20,
+                        ul: references.map(formatReference),
                         margin: [0, 0, 0, 10],
                     },
                 ],
@@ -318,7 +348,7 @@ LinkedIn: ${personalJson.linkedin}`,
                 },
             };
 
-            pdfMake.createPdf(docDefinition).download("CV_LarsPalm.pdf");
+            pdfMake.createPdf(docDefinition).download("CV_HansPalm.pdf");
         } finally {
             preparingPdf = false;
         }
