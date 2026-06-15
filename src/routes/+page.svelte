@@ -288,6 +288,15 @@
             grid-template-columns: 1fr;
         }
 
+        .header-meta {
+            order: -1;
+        }
+
+        .portrait-wrap {
+            justify-self: center;
+            max-width: 220px;
+        }
+
         .header-strip {
             grid-template-columns: 1fr;
         }

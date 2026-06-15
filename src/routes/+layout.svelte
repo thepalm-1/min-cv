@@ -15,9 +15,9 @@
   .toolbar {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 0.65rem;
-    width: min(1120px, calc(100% - 2rem));
+    width: min(1180px, calc(100% - 2rem));
     margin: 0 auto;
     padding-top: 1rem;
   }

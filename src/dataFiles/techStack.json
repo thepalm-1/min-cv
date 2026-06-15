@@ -5,15 +5,16 @@
         "RStudio"
     ],
     "analysisMethods": [
-        "GC-MS",
-        "Organisk analytisk kjemi",
         "Metodeutvikling",
-        "Kromatografi"
+        "Kromatografi",
+        "NMR",
+        "UV-spektrometri",
+        "IR-spektrometri",
+        "Massespektrometri"
     ],
     "systems": [
         "SAP",
-        "ERP-system",
-        "Masterdata"
+        "Masterdataspesialist"
     ],
     "courses": [
         {

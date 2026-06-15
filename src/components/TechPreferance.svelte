@@ -12,8 +12,8 @@
     <p class="intro">{$t.skillsIntro}</p>
     <div class="skills-container">
         <SkillAccordion title={$t.programming} list={skills.programming} />
-        <SkillAccordion title="Analysemetoder" list={skills.analysisMethods} />
-        <SkillAccordion title="Systemer" list={skills.systems} />
+        <SkillAccordion title="Kjemifaglig" list={skills.analysisMethods} />
+        <SkillAccordion title="ERP-Systemer" list={skills.systems} />
         <SkillAccordion title={$t.other} list={skills.other} />
     </div>
 </section>

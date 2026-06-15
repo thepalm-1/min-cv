@@ -278,14 +278,14 @@ LinkedIn: ${personalJson.linkedin}`,
                             {
                                 width: "*",
                                 stack: [
-                                    { text: "Analysemetoder", bold: true },
+                                    { text: "Kjemifaglig", bold: true },
                                     { ul: techStack.analysisMethods },
                                 ],
                             },
                             {
                                 width: "*",
                                 stack: [
-                                    { text: "Systemer", bold: true },
+                                    { text: "ERP-Systemer", bold: true },
                                     { ul: techStack.systems },
                                 ],
                             },

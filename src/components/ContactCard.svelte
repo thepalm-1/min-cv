@@ -24,6 +24,7 @@
         display: flex;
         flex-direction: column;
         gap: 0.45rem;
+        min-width: 0;
         width: 100%;
         color: var(--text-muted);
         font-style: normal;
@@ -33,6 +34,8 @@
     a {
         color: var(--text-muted);
         text-decoration: none;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     a:hover,
