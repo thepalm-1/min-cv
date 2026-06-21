@@ -1,0 +1,19 @@
+{
+  "name": "Hans Olav Hovtun Palm – fagprofil",
+  "short_name": "Hans Palm",
+  "description": "Fagprofil for Hans Olav Hovtun Palm, overingeniør i ammunisjonsteknologi.",
+  "lang": "nb-NO",
+  "start_url": "/min-cv/",
+  "scope": "/min-cv/",
+  "display": "standalone",
+  "background_color": "#0d141b",
+  "theme_color": "#0d141b",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
